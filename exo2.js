@@ -23,15 +23,11 @@ const data = [
     }
 ];
 
-// filtre en fonction de la fin de l'adresse email
-function filterData(data, email) {
-    let newData = [];
-    const user = data.filter(user => {
-        user.email.endsWith(email);   
-    })   
-    newData.push(user);
-    return newData; 
+
+function filterData(data, emailEnd) {
+    const userFiltered = data.filter(user => user.email.endsWith(emailEnd));    
+    return userFiltered; 
 }
 
-const test = filterData(data, 'outlook.com');
+const test = filterData(data, '@sfr.fr');
 console.log(test);
